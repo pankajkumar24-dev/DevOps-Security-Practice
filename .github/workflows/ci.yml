@@ -33,9 +33,4 @@ jobs:
         run: dotnet test --no-build
         
       - name: Build Docker image
-        run: docker build . -f Dockerfile -t bankingapi:latest
-
-
-      - name: Build Docker Image
-        run: |
-          docker build -t bankingapi:${{ github.sha }} .
+        run: docker build . -f Dockerfile -t bankingapi:latest .
