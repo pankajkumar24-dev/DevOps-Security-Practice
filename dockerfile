@@ -3,12 +3,12 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 WORKDIR /src
 
-COPY BankingApi/BankingApi.csproj BankingApi/
-RUN dotnet restore BankingApi/BankingApi.csproj
+COPY BankingApi.csproj ./
+RUN dotnet restore BankingApi.csproj
 
 COPY . .
 
-RUN dotnet publish BankingApi/BankingApi.csproj \
+RUN dotnet publish BankingApi.csproj \
     -c Release \
     -o /app/publish \
     --no-restore
